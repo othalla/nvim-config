@@ -161,13 +161,13 @@ vim.lsp.config("gopls", {
 	settings = {
 		gopls = {
 			gofumpt = true,
-			staticcheck = true,
+			staticcheck = false,
 			codelenses = {
 				generate = false,
 				gc_details = true,
 				tidy = true,
 				upgrade_dependency = true,
-				vendor = true,
+				vendor = false,
 			},
 		},
 	},
