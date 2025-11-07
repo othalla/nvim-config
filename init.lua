@@ -71,11 +71,11 @@ vim.cmd([[
 		autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8 textwidth=140
 		autocmd BufWrite *.c :call DeleteTrailingWS()
 
-		set foldmethod=expr
-		set foldminlines=0
-		set foldnestmax=3
-		set foldlevelstart=20
-		set foldexpr=nvim_treesitter#foldexpr()
+		"set foldmethod=expr
+		"set foldminlines=0
+		"set foldnestmax=3
+		"set foldlevelstart=20
+		"set foldexpr=nvim_treesitter#foldexpr()
 
 		" Line Break
 		:nnoremap <NL> i<CR><ESC>
@@ -108,7 +108,6 @@ vim.cmd([[
 
 vim.cmd[[colorscheme tokyonight]]
 
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -125,6 +124,15 @@ require'nvim-treesitter.configs'.setup {
 		enable = true,
 	},
 }
+
+-- Folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 10
+vim.opt.foldnestmax = 6
+
 -- Treesitter end
 
 -- Tests
