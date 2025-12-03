@@ -1,11 +1,13 @@
 vim.g.mapleader = ";"
 
+-- enable mouse for all modes
+vim.opt.mouse = 'a'
+
 require("config.lazy")
 
 vim.cmd([[
     " the contents of your existing init.vim
 		set encoding=UTF-8
-		set mouse=
 
 		filetype on
 		filetype plugin on
