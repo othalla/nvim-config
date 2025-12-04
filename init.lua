@@ -13,6 +13,16 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.textwidth = 100
 
+-- delete trailing whitespace on save for all files
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    local pos = vim.api.nvim_win_get_cursor(0)
+    vim.cmd([[%s/\s\+$//e]])
+    vim.api.nvim_win_set_cursor(0, pos)
+  end,
+})
+
 vim.cmd('filetype plugin indent on')
 
 require("config.lazy")
@@ -35,24 +45,10 @@ set nocompatible
 set wildmenu
 set incsearch
 
-func! DeleteTrailingWS()
-exe "normal mz"
-%s/\s\+$//ge
-exe "normal `z"
-endfunc
-
 func! DeleteNewLineEndOfFile()
 set binary
 set noeol
 endfunc
-
-" Go
-autocmd BufWrite *.go :call DeleteTrailingWS()
-
-" Python
-autocmd BufWrite *.py :call DeleteTrailingWS()
-
-autocmd BufWrite *.c :call DeleteTrailingWS()
 
 " Line Break
 :nnoremap <NL> i<CR><ESC>
