@@ -79,8 +79,6 @@ nnoremap <silent>[t <cmd>lua require("neotest").jump.prev({ status = "failed" })
 nnoremap <silent>]t <cmd>lua require("neotest").jump.next({ status = "failed" })<CR>
 ]])
 
-vim.cmd[[colorscheme tokyonight]]
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -105,7 +103,6 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 10
 vim.opt.foldnestmax = 6
-
 -- Treesitter end
 
 --- LSP
