@@ -15,7 +15,6 @@ vim.cmd([[
 		let g:NERDSpaceDelims = 1
 
 		syntax enable
-		filetype plugin indent on
 
 		set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
 		set t_Co=256
@@ -68,12 +67,6 @@ vim.cmd([[
 		" c
 		autocmd FileType c setlocal shiftwidth=8 tabstop=8 softtabstop=8 textwidth=140
 		autocmd BufWrite *.c :call DeleteTrailingWS()
-
-		"set foldmethod=expr
-		"set foldminlines=0
-		"set foldnestmax=3
-		"set foldlevelstart=20
-		"set foldexpr=nvim_treesitter#foldexpr()
 
 		" Line Break
 		:nnoremap <NL> i<CR><ESC>
