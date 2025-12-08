@@ -8,16 +8,17 @@ return {
   ft = {"go", 'gomod'},
   build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   opts = {
-    lsp_cfg = true,
-    lsp_gofumpt = true,
+    lsp_cfg = false,  -- false: do not setup lspconfig
+    lsp_gofumpt = true, -- false: managed by gopls
     lsp_keymaps = false,
-    lsp_on_attach = function(client, bufnr)
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        callback = function()
-          require("go.format").goimports()
-        end,
-      })
-    end,
+    lsp_inlay_hints = {
+      enable = false,
+    },
+    run_in_floaterm = true,
+    floaterm = {
+      postion = 'auto',  -- 'auto', 'center', 'top', 'bottom', 'left', 'right'
+      width = 0.5,       -- largeur (0.0-1.0 pour pourcentage)
+      height = 0.5,      -- hauteur
+    },
   },
 }
