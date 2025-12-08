@@ -65,7 +65,7 @@ nnoremap <leader>dc <cmd>lua require'dap'.continue()<cr>
 nnoremap <leader>ds <cmd>lua require("dapui").setup()
 nnoremap <leader>dc <cmd>lua require("dapui").close()
 
-" Ultest mappings
+" Neotest mappings
 nmap tf <cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>
 nmap tn <cmd>lua require("neotest").run.run()<cr>
 nmap ts <cmd>lua require("neotest").summary.toggle()<cr>
