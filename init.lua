@@ -146,11 +146,18 @@ if vim.fn.executable('custom-gcl') == 1 then
 end
 
 vim.lsp.config("golangci_lint_ls", {
-  filetypes = {'go'},
   cmd = { 'golangci-lint-langserver' },
-  filetypes = { 'go', 'gomod' },
+  filetypes = {'go', 'gomod'},
+  root_markers = { '.golangci.yml', '.git', 'go.mod' },
   init_options = {
-    command = { golangci_lint_binary, "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1" },
+    command = {
+      golangci_lint_binary,
+      "run",
+      "--output.json.path",
+      "stdout",
+      "--issues-exit-code=1",
+      "--show-stats=false"
+    },
   },
 })
 vim.lsp.enable({"golangci_lint_ls"})
