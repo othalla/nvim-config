@@ -93,6 +93,16 @@ require'nvim-treesitter'.setup {
   install_dir = vim.fn.stdpath('data') .. '/site'
 }
 
+require'nvim-treesitter'.install {
+  'rust',
+  'javascript',
+  'go',
+  'lua',
+  'json',
+  'yaml',
+  'toml'
+}
+
 -- Folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
