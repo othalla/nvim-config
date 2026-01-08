@@ -101,7 +101,8 @@ require'nvim-treesitter'.install {
   'json',
   'yaml',
   'bash',
-  'toml'
+  'toml',
+  'gitcommit',
 }
 
 -- Folding
