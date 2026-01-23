@@ -106,6 +106,7 @@ require'nvim-treesitter'.install {
   'git_rebase',
   'git_config',
   'make',
+  'sql',
 }
 
 -- Folding
