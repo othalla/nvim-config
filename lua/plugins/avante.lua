@@ -21,16 +21,8 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "copilot",
+    provider = "claude",
     providers = {
-      gemini = {
-        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.5-flash",
-        timeout = 30000,
-        temperature = 0,
-        max_tokens = 4096,
-      },
-
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-sonnet-4-20250514",
