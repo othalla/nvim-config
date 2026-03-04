@@ -25,6 +25,11 @@ return {
   end,
 
   vim.keymap.set('n', '<leader>e', function()
-    require('nvim-tree.api').tree.toggle()
+    local api = require('nvim-tree.api')
+    if api.tree.is_visible() then
+      api.tree.close()
+    else
+      api.tree.find_file({ open = true, focus = true })
+    end
   end, { noremap = true, silent = true, desc = 'Toggle nvim-tree' })
 }
