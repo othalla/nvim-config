@@ -100,6 +100,7 @@ require'nvim-treesitter'.install {
   'gomod',
   'gosum',
   'gotmpl',
+  'python',
   'lua',
   'json',
   'yaml',
