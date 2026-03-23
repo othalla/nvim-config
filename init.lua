@@ -103,6 +103,8 @@ require'nvim-treesitter'.install {
   'python',
   'lua',
   'json',
+  'terraform',
+  'hcl',
   'yaml',
   'bash',
   'toml',
